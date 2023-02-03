@@ -1,9 +1,16 @@
 require('dotenv').config()
-require('./config/database').connect()
 const express = require('express')
+const bodyParser = require('body-parser');
+const cors=require("cors");
 
-const app = express()
-
-app.use(express.json())
+const app=express();
+ 
+app.use(cors());
+  
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+ 
+app.use(bodyParser.json())
 
 module.exports = app
