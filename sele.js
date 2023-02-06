@@ -1,11 +1,20 @@
-const value1 = 50
-exports.value1 = value1
+/* const db = require("./app/models");
+const User = db.user;
 
-console.log(module)
+const user = User.findOne({
+  where: { username: "Doe" },
+});
 
-const function1 = function() {
-    console.log("I am a function")
-  }
-  exports.function1 = function1
-  
-  console.log(module)
+console.log(user); */
+
+const bcrypt = require('bcrypt');
+
+const hashPassword = async (password) => {
+  const saltRounds = 10;
+  const hash = await bcrypt.hash(password, saltRounds);
+  return hash;
+};
+
+hashPassword('secretpassword').then((hash) => {
+  console.log(hash);
+});
