@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, Sequelize)=>{
     const Users = sequelize.define("users", {
         id_users: {

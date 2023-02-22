@@ -17,7 +17,10 @@ app.use(express.urlencoded({extended: true}))
 // for parsing multipart/form-data
 // so we can upload file form body form-data
 //app.use(upload.array())
+
+// pulic path
 app.use(express.static(__dirname +'/public'));
+
 // simple route
 app.get("/", (req, res)=>{
     res.json({message: "Test app"})
